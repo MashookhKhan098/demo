@@ -1,0 +1,17 @@
+services:
+  urelegal-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: urelegal-app
+    restart: always
+    ports:
+      - "3012:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - urelegal-network
+
+networks:
+  urelegal-network:
+    driver: bridge
